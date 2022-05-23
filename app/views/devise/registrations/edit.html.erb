@@ -9,6 +9,10 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
+    <%= f.input :first_name, required: true, autofocus: true %>
+    <%= f.input :last_name, required: true, autofocus: true %>
+    <%= f.input :address, required: true, autofocus: true %>
+    <%= f.input :phone_number, required: true, autofocus: true %>
 
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
