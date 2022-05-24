@@ -1,7 +1,45 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://img.freepik.com/vecteurs-libre/logo-vecteur-moto_20448-45.jpg?w=2000);">
-  <div class="container">
-    <h1>Find your <strong>road</strong></h1>
-    <p>Rent a moto</p>
-    <%= link_to "Find mine", motos_path, class: "btn btn-ghost"%>
+<div class="row justify-content-center">
+    <div class="col-12 ">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active" >
+          <div class="banner" style="height: 500px; background-position: bottom; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547906250-5bdf142c606d?crop=entropy&cs=tinysrgb&fm=[…]FyY2h8N3x8bW90b3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800)">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Louez selon vos besoins</h5>
+              <p>Vacances, week-end, déplacements ponctuels, choisissez votre durée</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="banner" style="height: 500px; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(        https://images.unsplash.com/photo-1629035888981-f0570f0e94bd?crop=entropy&cs=tinysrgb&[…]ZWFyY2h8MTJ8fG1vdG98ZW58MHx8MHx8&auto=format&fit=crop&w=800)">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Louez la moto de vos rêves</h5>
+              <p>Road2Wheels propose tous les types de moto</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="banner" style="height: 500px; background-position: center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1623837244511-6d60815e43aa?crop=entropy&cs=tinysrgb&[…]ZWFyY2h8Mjl8fG1vdG98ZW58MHx8MHx8&auto=format&fit=crop&w=800)">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Louez selon votre budget</h5>
+              <p>Scooter ou trail dernier cri, vous choisissez la formule qui vous convient</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </div>
   </div>
-</div>

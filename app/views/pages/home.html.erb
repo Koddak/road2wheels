@@ -1,11 +1,11 @@
 <%= render './shared/banner' %>
 <div class="container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
   <%if current_user %>
   <h2> Welcome <%= current_user.first_name %></h2>
   <%end %>
-  <%= link_to "Sign out", destroy_user_session_path, method: :delete  %>
-  <%= link_to "See all offers", motos_path %>
-  <%= link_to "Submit an offer", new_moto_path %>
+  <h2 class="text-center my-3">Our best offers</h2>
+  <%= render './shared/cards' %>
+  <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary" %>
+  <%= link_to "See all offers", motos_path, class: "btn btn-outline-secondary" %>
+  <%= link_to "Submit an offer", new_moto_path, class: "btn btn-outline-secondary" %>
 </div>
