@@ -3,3 +3,4 @@
 <%if current_user %>
 <h2> Welcome <%= current_user.first_name %></h2>
 <%end %>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete  %>
