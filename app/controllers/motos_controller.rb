@@ -1,4 +1,5 @@
 class MotosController < ApplicationController
+  before_action :set_moto, only: [:show, :edit, :update, :destroy]
 
   def index
     @motos = policy_scope(Moto).order(created_at: :desc)
@@ -21,15 +22,34 @@ class MotosController < ApplicationController
   end
 
   def show
-    @moto = Moto.find(params[:id])
     authorize @moto
   end
 
+  def edit
+    authorize @moto
+  end
 
+  def update
+    @moto.update(moto_params)
+    if @moto.save
+      redirect_to moto_path(@moto)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @moto.destroy
+    redirect_to motos_path
+  end
 
   private
 
   def moto_params
     params.require(:moto).permit(:model, :brand, :cylinder, :price, :photo)
+  end
+
+  def set_moto
+    @moto = Moto.find(params[:id])
   end
 end

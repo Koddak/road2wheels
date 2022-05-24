@@ -1,0 +1,8 @@
+<%= simple_form_for(@moto) do |f| %>
+  <%= f.input :brand %>
+  <%= f.input :model %>
+  <%= f.input :cylinder %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
