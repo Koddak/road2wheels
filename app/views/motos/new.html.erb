@@ -1,10 +1,11 @@
 <h1>Create Your offer</h1>
-
-<%= simple_form_for(@moto) do |f| %>
-  <%= f.input :brand, placeholder: 'example : Honda' %>
-  <%= f.input :model, placeholder: 'example : CBF' %>
-  <%= f.input :cylinder, placeholder: '650' %>
-  <%= f.input :price, placeholder: 'example : 60.50' %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for(@moto) do |f| %>
+    <%= f.input :brand, placeholder: 'example : Honda' %>
+    <%= f.input :model, placeholder: 'example : CBF' %>
+    <%= f.input :cylinder, placeholder: '650' %>
+    <%= f.input :price, placeholder: 'example : 60.50' %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
