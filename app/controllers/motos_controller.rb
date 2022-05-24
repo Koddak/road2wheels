@@ -30,6 +30,7 @@ class MotosController < ApplicationController
   end
 
   def update
+    authorize @moto
     @moto.update(moto_params)
     if @moto.save
       redirect_to moto_path(@moto)
@@ -39,6 +40,7 @@ class MotosController < ApplicationController
   end
 
   def destroy
+    authorize @moto
     @moto.destroy
     redirect_to motos_path
   end
