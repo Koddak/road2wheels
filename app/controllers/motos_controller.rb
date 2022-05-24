@@ -11,6 +11,8 @@ class MotosController < ApplicationController
 
   def create
     @moto = Moto.new(moto_params)
+    @moto.user = current_user
+    authorize @moto
     if @moto.save
       redirect_to motos_path
     else
@@ -18,10 +20,16 @@ class MotosController < ApplicationController
     end
   end
 
+  def show
+    @moto = Moto.find(params[:id])
+    authorize @moto
+  end
+
+
 
   private
 
   def moto_params
-    params.require(:moto).permit(:model, :brand, :cylinder, :price)
+    params.require(:moto).permit(:model, :brand, :cylinder, :price, :photo)
   end
 end
