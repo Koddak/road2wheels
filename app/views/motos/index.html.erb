@@ -1,16 +1,19 @@
-<h1>All our motos</h1>
-
-<%@motos.each do |moto| %>
-<div>
-  <%= moto.model %>
-  <%= moto.brand %>
-  <%= image_tag moto.photo, alt: moto.brand %>
-  <%= link_to "Show", moto_path(moto) %>
-  <%= link_to "Edit", edit_moto_path(moto) %>
-  <%= link_to "Delete", moto_path(moto), method: :delete, data: { confirm: "Are you sure you want to remove #{moto.brand}"}, class: 'text-danger' %>
+<div class="container">
+  <h1>All our motos</h1>
+    <%@motos.each do |moto| %>
+    <div class="card" style="width: 18rem; ">
+      <%= image_tag moto.photo, alt: moto.brand, class:"card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= moto.brand %></h5>
+        <h3 class="card-text"><%= moto.model %></h3>
+        <%= link_to "Show", moto_path(moto),class: "btn btn-info" %>
+        <%= link_to "Edit", edit_moto_path(moto),class: "btn btn-primary" %>
+        <%= link_to "Delete", moto_path(moto), method: :delete, data: { confirm: "Are you sure you want to remove #{moto.brand}"},class: "btn btn-danger" %>
+      </div>
+    </div>
+    <%end %>
+    <br>
+    <%= link_to "Submit an offer", new_moto_path, class: "btn btn-primary" %>
+    <br>
+    <%= link_to "Homepage", root_path, class: "btn btn-secondary" %>
 </div>
-<%end %>
-<br>
-<%= link_to "Submit an offer", new_moto_path %>
-<br>
-<%= link_to "Homepage", root_path %>
