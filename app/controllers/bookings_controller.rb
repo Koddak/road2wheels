@@ -15,10 +15,15 @@ class BookingsController < ApplicationController
     @booking.moto = Moto.find(params[:id])
     authorize @booking
     if @booking.save
-      redirect_to moto_path(@booking.moto)
+      redirect_to booking_path(@booking)
     else
       render :new
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   private
