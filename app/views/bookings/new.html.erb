@@ -1,0 +1,8 @@
+<h1>Réserver votre 2 roues</h1>
+<div class="container">
+  <%= simple_form_for(@booking) do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.submit %>
+  <% end %>
+</div>
