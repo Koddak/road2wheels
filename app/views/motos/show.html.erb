@@ -1,24 +1,33 @@
+<div class="container">
+  <div class="card-product">
+      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img mt-2" %>
 
-<div class="card-product">
-    <%= image_tag @moto.photo, alt: @moto.brand %>
-
-  <div class="card-product-infos">
-    <h2>Marque : <%= @moto.brand%></h2>
+    <div class="card-product-infos">
+      <h2>Marque : <%= @moto.brand%></h2>
       <h2>Modéle : <%= @moto.model %></h2>
-        <h2>Modéle : <%= @moto.cylinder %></h2>
-          <h2>Prix :<%= @moto.price %>€/jour</h2>
+      <h2>Puissance : <%= @moto.cylinder %>cc</h2>
+      <h2>Prix :<%= @moto.price %>€/jour</h2>
+
+      <p> Louez ma moto elle est géniale !</p>
+
+    <div>
+      <h2>Propriétaire : <%= @moto.user.first_name %></h2>
+      <h2>Localisation : <%= @moto.user.address %></h2>
+      <h2><%= image_tag @moto.user.photo, class: "avatar-show" %></h2>
+    </div>
+      <% if current_user == @moto.user  %>
+        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-primary" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-danger" %></p>
+      <% else %>
+        <p><%= link_to "Réserver", new_booking_path, class:"btn btn-danger w-100" %></p>
+        <p><%= link_to "Revenir à nos offres", motos_path, class: "btn btn-info w-100" %></p>
+      <% end  %>
 
 
-    <p> Louez ma moto elle est géniale !</p>
 
-  <div>
-  <h2>Propriétaire : <%= @moto.user.first_name %></h2>
-    <h2>Localisation : <%= @moto.user.address %></h2>
-  <h2>Propriétaire : <%= @moto.user.photo %></h2>
+    </div>
   </div>
 
-    <p><%= link_to "Voir toutes nos offres", motos_path %></p>
-
-
+  <div style="height: 500px">
   </div>
 </div>
