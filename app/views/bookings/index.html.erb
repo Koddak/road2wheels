@@ -1,0 +1,6 @@
+<%@bookings.each do |booking| %>
+<h1><%= booking.moto.model%></h1>
+<h2><%= booking.moto.brand %></h2>
+<p>Du : <%= booking.start_date %></p>
+<p>Au : <%= booking.end_date %></p>
+<%end %>
