@@ -1,8 +1,27 @@
 <div class="container">
-  <h1><%= @moto.brand%></h1>
-  <h2><%= @moto.model %></h2>
-  <%= image_tag @moto.photo, alt: @moto.brand %>
-  <h2>Moto of <%= @moto.user.first_name %></h2>
-  <p><%= @moto.price %>€/day</p>
-  <p><%= link_to "See all offers", motos_path %></p>
+  <div class="card-product">
+      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img mt-2" %>
+
+    <div class="card-product-infos">
+      <h2>Marque : <%= @moto.brand%></h2>
+      <h2>Modéle : <%= @moto.model %></h2>
+      <h2>Puissance : <%= @moto.cylinder %>cc</h2>
+      <h2>Prix :<%= @moto.price %>€/jour</h2>
+
+      <p> Louez ma moto elle est géniale !</p>
+
+    <div>
+      <h2>Propriétaire : <%= @moto.user.first_name %></h2>
+      <h2>Localisation : <%= @moto.user.address %></h2>
+      <h2>Propriétaire : <%= image_tag @moto.user.photo, class: "avatar-show" %></h2>
+    </div>
+
+      <p><%= link_to "Revenir à nos offres", motos_path, class: "btn btn-info w-100" %></p>
+
+
+    </div>
+  </div>
+
+  <div style="height: 500px">
+  </div>
 </div>
