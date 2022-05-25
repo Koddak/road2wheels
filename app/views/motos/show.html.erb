@@ -1,4 +1,6 @@
 <div class="container">
+  <%= link_to "<Retour", motos_path, class: "text-secondary text-decoration-none my-2" %>
+
   <div class="card-product">
       <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img mt-2" %>
 
@@ -6,14 +8,13 @@
       <h2>Marque : <%= @moto.brand%></h2>
       <h2>Modéle : <%= @moto.model %></h2>
       <h2>Puissance : <%= @moto.cylinder %>cc</h2>
-      <h2>Prix :<%= @moto.price %>€/jour</h2>
+      <h2>Prix :<%= @moto.price.to_i %>€/jour</h2>
 
       <p> Louez ma moto elle est géniale !</p>
 
     <div>
-      <h2>Propriétaire : <%= @moto.user.first_name %></h2>
       <h2>Localisation : <%= @moto.user.address %></h2>
-      <h2><%= image_tag @moto.user.photo, class: "avatar-show" %></h2>
+      <h2>Par : <%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
     </div>
       <% if current_user == @moto.user  %>
         <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-primary" %></p>
