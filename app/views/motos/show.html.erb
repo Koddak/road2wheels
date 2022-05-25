@@ -1,0 +1,6 @@
+<h1><%= @moto.brand%></h1>
+<h2><%= @moto.model %></h2>
+<%= image_tag @moto.photo, alt: @moto.brand %>
+<h2>Moto of <%= @moto.user.first_name %></h2>
+<p><%= @moto.price %>€/day</p>
+<p><%= link_to "See all offers", motos_path %></p>
