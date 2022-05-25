@@ -13,10 +13,16 @@
     <div>
       <h2>Propriétaire : <%= @moto.user.first_name %></h2>
       <h2>Localisation : <%= @moto.user.address %></h2>
-      <h2>Propriétaire : <%= image_tag @moto.user.photo, class: "avatar-show" %></h2>
+      <h2><%= image_tag @moto.user.photo, class: "avatar-show" %></h2>
     </div>
+      <% if current_user == @moto.user  %>
+        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-primary" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-danger" %></p>
+      <% else %>
+        <p><%= link_to "Réserver", new_booking_path, class:"btn btn-danger w-100" %></p>
+        <p><%= link_to "Revenir à nos offres", motos_path, class: "btn btn-info w-100" %></p>
+      <% end  %>
 
-      <p><%= link_to "Revenir à nos offres", motos_path, class: "btn btn-info w-100" %></p>
 
 
     </div>
