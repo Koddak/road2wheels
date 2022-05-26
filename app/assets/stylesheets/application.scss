@@ -7,19 +7,24 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-body{
+body {
   background-color: #EEEEEE;
 }
 
-h1, h3, h4{
+h1,
+h3,
+h4 {
   color: #787A91
 }
 
-h2, p, h5{
+h2,
+p,
+h5 {
   color: #0F044C;
 }
