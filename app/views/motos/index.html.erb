@@ -1,4 +1,12 @@
 <div class="container">
+<%= form_tag motos_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a moto"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
   <h2 class="text-center" style="margin-top: 16px">Toutes nos motos</h2>
   <%= link_to "<Retour", root_path, class: "text-secondary text-decoration-none my-2" %>
   <br>

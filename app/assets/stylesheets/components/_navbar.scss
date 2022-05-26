@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-between;
+  // justify-content: space-between;
   background: rgb(120, 122, 145);
   opacity: 0.8;
 }
@@ -11,4 +11,9 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
   object-fit: cover;
+}
+
+.search{
+  display: flex;
+  align-items: center;
 }
