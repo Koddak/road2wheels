@@ -1,4 +1,18 @@
 .btn {
-  border-radius: 6px;
   margin: 6px;
+  background-color: #141E61;
+  color: #EEEEEE;
+  border-radius: 8px;
+
+  &:hover{
+    color: #EEEEEE;
+    background-color: #0F044C;
+  }
+
+}
+
+.btn-info {
+  color: aliceblue;
+  background-color: rgb(230, 208, 68);
+  border: 0px;
 }

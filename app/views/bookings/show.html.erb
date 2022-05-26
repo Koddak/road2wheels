@@ -1,0 +1,10 @@
+<div class="container text-center">
+  <h1>Votre réservation a bien été prise en compte</h1>
+  <%= image_tag @booking.moto.photo, style:"height: 500px" %>
+  <h2><%= @booking.moto.model %></h2>
+  <h3><%= @booking.moto.brand %></h3>
+  <p>Par : <%= image_tag @booking.moto.user.photo, class: "avatar" %><%= @booking.moto.user.first_name %></p>
+  <p>Du : <%= @booking.start_date %> Au : <%= @booking.end_date %></p>
+  <p>En attente de validation</p>
+  <%= link_to "Retour à l'accueil", root_path, class: "btn btn-primary" %>
+</div>

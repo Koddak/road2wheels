@@ -1,0 +1,11 @@
+<div class="container text-center">
+  <h1>Réserver votre 2 roues</h1>
+  <%= image_tag @moto.photo, style:"height: 500px" %>
+  <h2><%= @moto.model %></h2>
+  <h3><%= @moto.brand %></h3>
+  <%= simple_form_for(@booking) do |f| %>
+    <%= f.input :start_date, as: :date, label: "Du" %>
+    <%= f.input :end_date, as: :date, label: "Au" %>
+    <%= f.submit class: "btn btn-outline-primary" %>
+  <% end %>
+</div>

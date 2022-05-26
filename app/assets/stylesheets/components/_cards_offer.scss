@@ -1,10 +1,11 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-.card-trip > img {
+.card-trip>img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -41,4 +42,14 @@
 .card {
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 0px;
+  border-radius: 8px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+}
+
+.card-img-top {
+  border: 1px solid rgba(0, 0, 0, 0.11);
 }
