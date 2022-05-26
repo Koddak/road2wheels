@@ -4,6 +4,10 @@ class MotosController < ApplicationController
 
   def index
     @motos = policy_scope(Moto).order(created_at: :desc)
+
+    if params[:query].present?
+      @motos = Moto.search_by_model_and_adress(params[:query])
+    end
   end
 
   def new
@@ -47,7 +51,7 @@ class MotosController < ApplicationController
   def destroy
     authorize @moto
     @moto.destroy
-    redirect_to motos_path
+    redirect_to dashboard_path
   end
 
   private

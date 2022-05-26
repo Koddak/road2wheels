@@ -17,12 +17,14 @@
 
   <body>
     <%= render './shared/navbar' %>
+    <div style="min-height:80vh">
 
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </div>
+    <footer>
+      <%= render partial: "shared/footer"  %>
+    </footer>
   </body>
-  <footer>
-     <%= render partial: "shared/footer"  %>
-  </footer>
 </html>

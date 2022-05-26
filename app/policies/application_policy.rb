@@ -16,6 +16,10 @@ class ApplicationPolicy
     false
   end
 
+  def accept?
+    false
+  end
+
   def create?
     false
   end
