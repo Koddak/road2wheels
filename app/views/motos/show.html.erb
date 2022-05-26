@@ -12,7 +12,7 @@
 
 
     <div>
-      <h2>Localisation : <%= @moto.user.address %></h2>
+      <h2>Localisation : <%= @moto.address %></h2>
       <h2>Par : <%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
     </div>
       <% if current_user == @moto.user  %>
