@@ -16,10 +16,10 @@
       <h2>Par : <%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
     </div>
       <% if current_user == @moto.user  %>
-        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn" %></p>
-        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn" %></p>
+        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-blue" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-blue" %></p>
       <% else %>
-        <p><%= link_to "Réserver", new_booking_path, class:"btn" %></p>
+        <p><%= link_to "Réserver", new_booking_path, class:"btn btn-blue" %></p>
       <% end  %>
 
 

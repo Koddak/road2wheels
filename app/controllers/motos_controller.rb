@@ -43,7 +43,7 @@ class MotosController < ApplicationController
   def destroy
     authorize @moto
     @moto.destroy
-    redirect_to motos_path
+    redirect_to dashboard_path
   end
 
   private
