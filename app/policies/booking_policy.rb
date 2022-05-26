@@ -2,7 +2,7 @@ class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      scope.where(:user == user)
     end
   end
 
@@ -12,5 +12,13 @@ class BookingPolicy < ApplicationPolicy
 
   def show?
     return true
+  end
+
+  def accept?
+    true
+  end
+
+  def decline?
+    true
   end
 end

@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Mon dashboard</h1>
+  <div class="my-3">
+    <h2 class="mb-3">Mes demandes envoyées</h2>
+    <div class="row justify-content-between">
+      <%@bookings_send.each do |booking| %>
+        <div class="card col-lg-3 my-3" style="width: 18rem;">
+          <%= image_tag booking.moto.photo, class:"card-img-top card-dashboard mt-2" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= "#{booking.moto.brand} #{booking.moto.model}"%></h5>
+            <p class="card-text">Loué par <%= booking.moto.user.first_name %> <%=image_tag booking.moto.user.photo, class:"avatar", style: "width: 30px; height: 30px" %></p>
+            <div class="p-1">
+              <p>Du <%= booking.start_date %></p>
+              <p>Au <%= booking.end_date %></p>
+            </div>
+            <p class="btn btn-blue w-100"><%= booking.status %></p>
+          </div>
+        </div>
+      <%end %>
+    </div>
+  </div>
+  <div class="my-3">
+    <h2 class="mb-3">Mes offres</h2>
+    <div class="row justify-content-between">
+      <%@motos.each do |moto| %>
+        <div class="card col-lg-3 my-3" style="width: 18rem;">
+          <%= image_tag moto.photo, class:"card-img-top card-dashboard mt-2" %>
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title"><%= "#{moto.brand} #{moto.model}"%></h5>
+              <p><%= moto.price.to_i%> €</p>
+            </div>
+            <%= link_to "Modifier", edit_moto_path(moto), class: "btn btn-grey" %>
+            <%= link_to "Supprimer", moto_path(moto), method: :delete, data: { confirm: "Are you sure you want to remove #{moto.brand}"},class: "btn btn-red" %>
+          </div>
+        </div>
+      <%end %>
+    </div>
+  </div>
+  <div class= "my-3">
+    <h2 class="mb-3">Mes demandes reçues</h2>
+    <div class="row justify-content-between">
+      <%@bookings_rec.each do |booking| %>
+        <div class="card col-lg-3" style="width: 18rem;">
+          <%= image_tag booking.moto.photo, class:"card-img-top card-dashboard mt-2" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= "#{booking.moto.brand} #{booking.moto.model}"%></h5>
+            <p class="card-text">Demandé par <%= booking.user.first_name %> <%=image_tag booking.user.photo, class:"avatar", style: "width: 30px; height: 30px" %></p>
+            <div class="p-1">
+              <p>Du <%= booking.start_date %></p>
+              <p>Au <%= booking.end_date %></p>
+            </div>
+            <p><%= booking.status %></p>
+            <%= link_to "Accepter", booking_accept_path(booking), method: :patch, class: "btn btn-grey" %>
+            <%= link_to "Décliner", booking_decline_path(booking), method: :patch, class: "btn btn-red" %>
+          </div>
+        </div>
+      <%end %>
+    </div>
+  </div>
+</div>
