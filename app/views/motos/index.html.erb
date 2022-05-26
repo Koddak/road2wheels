@@ -8,6 +8,7 @@
         <div class="card-body">
           <h5 class="card-title w-100 text-decoration-none"><%= moto.brand %></h5>
           <h3 class="card-text"><%= moto.model %></h3>
+          <h3 class="card-text"><%= moto.address %></h3>
           <h5 class="card-price position-absolute bottom-0 end-0 mx-2 "><%= moto.price.to_i%>€/jour</h5>
 
           <a class="stretched-link" href="/motos/<%= moto.id %>"></a>
