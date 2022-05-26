@@ -17,7 +17,7 @@
     </div>
       <% if current_user == @moto.user  %>
         <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn" %></p>
-        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-danger" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn" %></p>
       <% else %>
         <p><%= link_to "Réserver", new_booking_path, class:"btn" %></p>
       <% end  %>
