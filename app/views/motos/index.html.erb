@@ -1,6 +1,9 @@
 <div class="container">
   <h2 class="text-center" style="margin-top: 16px">Toutes nos motos</h2>
   <%= link_to "<Retour", root_path, class: "text-secondary text-decoration-none my-2" %>
+  <br>
+    <%= link_to "Créer une offre", new_moto_path, class: "btn" %>
+  <br>
   <div class="row justify-content-between">
     <%@motos.each do |moto| %>
       <div class="card col-4 mt-5 position-relative" style="width: 24rem; ">
@@ -20,7 +23,4 @@
       </div>
     <%end %>
   </div>
-  <br>
-    <%= link_to "Créer une offre", new_moto_path, class: "btn" %>
-  <br>
 </div>
