@@ -24,6 +24,10 @@ class MotosController < ApplicationController
 
   def show
     authorize @moto
+    @marker = {
+        lat: @moto.latitude,
+        lng: @moto.longitude
+      }
   end
 
   def edit
