@@ -20,13 +20,13 @@ export default class extends Controller {
     this.#fitMapToMarkers()
   }
   #addMarkersToMap() {
-      new mapboxgl.Marker()
-        .setLngLat([ this.markerValue.lng, this.markerValue.lat ])
-        .addTo(this.map)
+    new mapboxgl.Marker()
+      .setLngLat([this.markerValue.lng, this.markerValue.lat])
+      .addTo(this.map)
   }
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
-    bounds.extend([ this.markerValue.lng, this.markerValue.lat ])
+    bounds.extend([this.markerValue.lng, this.markerValue.lat])
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
   }
 }
