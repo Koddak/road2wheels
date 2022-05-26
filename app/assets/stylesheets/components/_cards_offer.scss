@@ -3,6 +3,11 @@
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .card-trip>img {
@@ -43,9 +48,21 @@
   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: 0px;
   border-radius: 8px;
+  transition: 0.3s;
+  object-fit: cover;
+  object-position: center;
 
   &:hover {
     transform: scale(1.1);
   }
 
+}
+
+.card-img-top {
+  border: 1px solid rgba(0, 0, 0, 0.11);
+}
+
+.card-dashboard {
+  height: 198px;
+  width: 264px;
 }
