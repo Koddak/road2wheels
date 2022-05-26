@@ -4,6 +4,10 @@ class MotosController < ApplicationController
 
   def index
     @motos = policy_scope(Moto).order(created_at: :desc)
+
+    if params[:query].present?
+      @motos = Moto.search_by_model_and_adress(params[:query])
+    end
   end
 
   def new
