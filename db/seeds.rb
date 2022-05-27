@@ -30,51 +30,51 @@ mickael.photo.attach(io: file, filename: 'mickael.png', content_type: 'image/png
 mickael.save
 
 file = URI.open("https://www.motoplanete.com/honda/zoom-700px/Honda-CB-650-F-2017-700px.webp")
-moto1 = Moto.new(brand: "Honda", model: "CBF", price: 65, cylinder: "650cc", address: "Lille", user_id: amaury.id)
+moto1 = Moto.new(brand: "Honda", model: "CBF", price: 65, cylinder: "650", address: "Lille", user_id: amaury.id)
 moto1.photo.attach(io: file, filename: 'hondaCBF.png', content_type: 'image/png')
 moto1.save
 
 file = URI.open("https://www.motoplanete.com/honda/zoom-700px/Honda-VFR-800-2018-700px.webp")
-moto2 = Moto.new(brand: "Honda", model: "VFR", price: 80, cylinder: "800cc", address: "Paris", user_id: amaury.id)
+moto2 = Moto.new(brand: "Honda", model: "VFR", price: 80, cylinder: "800", address: "Paris", user_id: amaury.id)
 moto2.photo.attach(io: file, filename: 'hondaVFR.png', content_type: 'image/png')
 moto2.save
 
 file = URI.open("https://media.motoservices.com/media/cache/vehicle_detail/media/vehicle/822/GSX-R600_2011_Diagonal_W.jpg")
-moto3 = Moto.new(brand: "Suzuki", model: "GSX-R", price: 100, cylinder: "600cc", address: "Lambersart", user_id: benjamin.id)
+moto3 = Moto.new(brand: "Suzuki", model: "GSX-R", price: 100, cylinder: "600", address: "Lambersart", user_id: benjamin.id)
 moto3.photo.attach(io: file, filename: 'suzukiGSX-R.png', content_type: 'image/png')
 moto3.save
 
 file = URI.open("https://www.motoplanete.com/yamaha/zoom-700px/V-max-2010-700px.webp")
-moto4 = Moto.new(brand: "Yamaha", model: "V-MAX", price: 75, cylinder: "1700cc", address: "Lompret", user_id: benjamin.id)
+moto4 = Moto.new(brand: "Yamaha", model: "V-MAX", price: 75, cylinder: "1700", address: "Lompret", user_id: benjamin.id)
 moto4.photo.attach(io: file, filename: 'yamahavmax.png', content_type: 'image/png')
 moto4.save
 
 file = URI.open("https://www.motoplanete.com/yamaha/Yamaha-MT-10-2019.webp")
-moto5 = Moto.new(brand: "Yamaha", model: "MT-10", price: 85, cylinder: "1000cc", address: "Fromelles", user_id: marco.id)
+moto5 = Moto.new(brand: "Yamaha", model: "MT-10", price: 85, cylinder: "1000", address: "Fromelles", user_id: marco.id)
 moto5.photo.attach(io: file, filename: 'yamahamt10.png', content_type: 'image/png')
 moto5.save
 
 file = URI.open ("https://www.motoplanete.com/bmw/zoom-700px/BMW-R-1250-RT-2022-700px.webp")
-moto6 = Moto.new(brand: "BMW", model: "R1250RT", price: 125, cylinder:  "1250cc", address: "Lomme", user_id: mickael.id)
+moto6 = Moto.new(brand: "BMW", model: "R1250RT", price: 125, cylinder:  "1250", address: "Lomme", user_id: mickael.id)
 moto6.photo.attach(io: file, filename: 'bmw.png', content_type: 'image/png')
 moto6.save
 
 file = URI.open ("https://www.motoplanete.com/yamaha/zoom-700px/yamaha-XT-1200-Z-Super-Tenere-2018-700px.webp")
-moto7 = Moto.new(brand: "Yamaha", model: "XTZ 1200", price: 115, cylinder: "1200cc", address: "Herlies", user_id: mickael.id)
+moto7 = Moto.new(brand: "Yamaha", model: "XTZ 1200", price: 115, cylinder: "1200", address: "Herlies", user_id: mickael.id)
 moto7.photo.attach(io: file, filename: 'yamaham700xt.png', content_type: 'image/png')
 moto7.save
 
 file = URI.open ("https://www.motoplanete.com/indian/zoom-700px/Indian-FTR-1200-R-Carbon-2022-700px-a.webp")
-moto8 = Moto.new(brand: "Indian", model: "FTR", price: 90, cylinder: "1200cc",address: "Haubourdin", user_id: mickael.id)
+moto8 = Moto.new(brand: "Indian", model: "FTR", price: 90, cylinder: "1200",address: "Haubourdin", user_id: mickael.id)
 moto8.photo.attach(io: file, filename: 'indian.png', content_type: 'image/png')
 moto8.save
 
 file = URI.open ("https://www.motoplanete.com/moto-guzzi/zoom-700px/Moto-Guzzi-850-V7-IV-Stone-2022-700px.webp")
-moto9 = Moto.new(brand: "Moto-Guzzi", model: "V7-Stone", price: 135, cylinder: "850cc", address: "Croix", user_id: marco.id)
+moto9 = Moto.new(brand: "Moto-Guzzi", model: "V7-Stone", price: 135, cylinder: "850", address: "Croix", user_id: marco.id)
 moto9.photo.attach(io: file, filename: 'guzzi.png', content_type: 'image/png')
 moto9.save
 
 file = URI.open ("https://2img.net/u/3112/65/44/44/avatars/1081-91.jpg")
-moto10 = Moto.new(brand: "Highway to Hell", model: "Oui-Oui", price: 850, cylinder: "999cc", address: "La grande vallée", user_id: benjamin.id)
+moto10 = Moto.new(brand: "Highway to Hell", model: "Oui-Oui", price: 850, cylinder: "999", address: "La grande vallée", user_id: benjamin.id)
 moto10.photo.attach(io: file, filename: 'ouioui.png', content_type: 'image/png')
 moto10.save
