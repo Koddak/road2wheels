@@ -51,8 +51,8 @@
               <p>Au <%= booking.end_date %></p>
             </div>
             <p><%= booking.status %></p>
-            <%= link_to "Accepter", booking_accept_path(booking), method: :patch, class: "btn btn-grey" %>
-            <%= link_to "Décliner", booking_decline_path(booking), method: :patch, class: "btn btn-red" %>
+            <%= link_to "Accepter", booking_accept_path(booking), method: :patch, class: "btn btn-grey", remote: true %>
+            <%= link_to "Décliner", booking_decline_path(booking), method: :patch, class: "btn btn-red", remote: true %>
           </div>
         </div>
       <%end %>
