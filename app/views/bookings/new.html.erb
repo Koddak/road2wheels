@@ -4,8 +4,8 @@
   <h2><%= @moto.model %></h2>
   <h3><%= @moto.brand %></h3>
   <%= simple_form_for(@booking) do |f| %>
-    <%= f.input :start_date, as: :date, label: "Du" %>
-    <%= f.input :end_date, as: :date, label: "Au" %>
+    <%= f.input :start_date, as: :date, label: "Du" , html5: true%>
+    <%= f.input :end_date, as: :date, label: "Au", html5: true %>
     <%= f.submit class: "btn btn-outline-primary" %>
   <% end %>
 </div>
