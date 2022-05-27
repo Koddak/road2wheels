@@ -27,6 +27,8 @@ class MotosController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
+    authorize @booking
     authorize @moto
     @marker = {
         lat: @moto.latitude,
