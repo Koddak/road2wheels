@@ -6,6 +6,7 @@
   <p>Par : <%= image_tag @booking.moto.user.photo, class: "avatar" %><%= @booking.moto.user.first_name %></p>
   <p>Du : <%= @booking.start_date %> Au : <%= @booking.end_date %></p>
   <p>En attente de validation</p>
+  <h2><strong>Prix total: <%= @booking.moto.price * (@booking.end_date - @booking.start_date) %> €</strong></h2>
   <%= link_to "Dashboard", dashboard_path, class: "btn btn-blue" %>
   <%= link_to "Retour à l'accueil", root_path, class: "btn btn-grey" %>
 </div>
