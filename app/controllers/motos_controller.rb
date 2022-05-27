@@ -30,7 +30,8 @@ class MotosController < ApplicationController
     authorize @moto
     @marker = {
         lat: @moto.latitude,
-        lng: @moto.longitude
+        lng: @moto.longitude,
+        image_url: helpers.asset_url("marker.png")
       }
   end
 
