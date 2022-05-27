@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row  justify-content-around mb-4">
     <%Moto.all.last(3).each do |moto| %>
-      <%=link_to moto_path(moto), class: "card-trip col-12 col-lg-4 m-2 pt-2 text-decoration-none text-dark" do %>
+      <%=link_to moto_path(moto), class: "card-trip col-12 col-lg-3 pt-2 text-decoration-none text-dark" do %>
           <%= image_tag moto.photo , style:"height: 280px" %>
           <div class="card-trip-infos">
             <div>
