@@ -1,45 +1,39 @@
 <div class="container">
+  <%= link_to "<Retour", motos_path, class: "text-secondary text-decoration-none my-2" %>
+
+  <div class="card-product">
+      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img" %>
+
+    <div class="card-product-infos">
+      <h2>Marque : <%= @moto.brand%></h2>
+      <h2>Modéle : <%= @moto.model %></h2>
+      <h2>Puissance : <%= @moto.cylinder %>cc</h2>
+      <h2>Prix :<%= @moto.price.to_i %>€/jour</h2>
 
 
-  <div class="row card-product mt-4">
-    <div class="col-lg-6 col-12">
-      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img", style:"width: 100%" %>
+    <div>
+      <h2>Localisation : <%= @moto.address %></h2>
+      <h2>Par : <%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
+
+
     </div>
-    <div class="col-lg-6 col-12 ">
-      <div class="card-product-infos">
-        <h1><strong><%= @moto.brand%></strong> <%= @moto.model %></h1>
-        <h2><%= @moto.cylinder %> cc</h2>
-        <h2><%= @moto.address %></h2>
-        <h2><strong><%= @moto.price.to_i %> €/jour</strong></h2>
-        <h2><%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
+      <% if current_user == @moto.user  %>
+        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-blue" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-blue" %></p>
+      <% else %>
+        <p><%= link_to "Réserver", new_booking_path, class:"btn btn-blue" %></p>
+      <% end  %>
 
-        <% if current_user == @moto.user  %>
 
-            <%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-grey mt-4 mx-2", style: "width: 46%" %>
-            <%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-red mt-4 mx-2", style: "width: 46%" %>
 
-        <% else %>
-          <p><%= link_to "Réserver", moto_path(@moto, anchor: "form"), class:"btn btn-blue w-100 mt-4" %></p>
-        <% end  %>
-
-      </div>
-      <div style="height: 300px">
-        <div style="width: 100%; height: 300px; margin-top: 8px; "
-          data-controller="mapbox"
-          data-mapbox-marker-value="<%= @marker.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-        </div>
-      </div>
     </div>
   </div>
-  <div class="container text-center mt-4" id="form">
-    <h1>Réserver votre 2 roues</h1>
-    <div class="container" style="width: 50%">
-      <%= simple_form_for(@booking) do |f| %>
-      <%= f.input :start_date, as: :date, label: "Du", html5: true %>
-      <%= f.input :end_date, as: :date, label: "Au", html5: true %>
-      <%= f.submit "Réserver" ,class: "btn btn-blue w-50" %>
-      <% end %>
+
+  <div style="height: 500px">
+    <div style="width: 100%; height: 500px; margin-top: 24px; "
+      data-controller="mapbox"
+      data-mapbox-marker-value="<%= @marker.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
