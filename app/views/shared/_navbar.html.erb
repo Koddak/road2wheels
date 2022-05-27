@@ -3,7 +3,9 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo3.png", style: "width: 300px" %>
     <% end %>
-
+    <div>
+      <%= link_to "Voir toutes nos motos", motos_path, class: "btn btn-blue" %>
+    </div>
     <div class="search" >
       <div>
         <%= form_tag motos_path, method: :get do %>

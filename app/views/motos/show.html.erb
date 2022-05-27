@@ -1,37 +1,39 @@
 <div class="container">
 
-
-  <div class="row card-product mt-4">
-    <div class="col-lg-6 col-12">
-      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img", style:"width: 100%" %>
-    </div>
-    <div class="col-lg-6 col-12 ">
-      <div class="card-product-infos">
-        <h1><strong><%= @moto.brand%></strong> <%= @moto.model %></h1>
-        <h2><%= @moto.cylinder %> cc</h2>
-        <h2><%= @moto.address %></h2>
-        <h2><strong><%= @moto.price.to_i %> €/jour</strong></h2>
-        <h2><%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
-
-        <% if current_user == @moto.user  %>
-
-            <%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-grey mt-4 mx-2", style: "width: 46%" %>
-            <%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-red mt-4 mx-2", style: "width: 46%" %>
-
-        <% else %>
-          <p><%= link_to "Réserver", moto_path(@moto, anchor: "form"), class:"btn btn-blue w-100 mt-4" %></p>
-        <% end  %>
-
+    <div class=" card-product mt-4 ">
+      <div class="row ">
+      <div class="col-lg-6 col-12">
+        <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img", style:"width: 100%" %>
       </div>
-      <div style="height: 300px">
-        <div style="width: 100%; height: 300px; margin-top: 8px; "
-          data-controller="mapbox"
-          data-mapbox-marker-value="<%= @marker.to_json %>"
-          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div class="col-lg-6 col-12 ">
+        <div class="card-product-infos">
+          <h1><strong><%= @moto.brand%></strong> <%= @moto.model %></h1>
+          <h2><%= @moto.cylinder %> cc</h2>
+          <h2><%= @moto.address %></h2>
+          <h2><strong><%= @moto.price.to_i %> €/jour</strong></h2>
+          <h2><%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
+
+          <% if current_user == @moto.user  %>
+
+              <%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-grey mt-4 mx-2", style: "width: 46%" %>
+              <%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-red mt-4 mx-2", style: "width: 46%" %>
+
+          <% else %>
+            <p><%= link_to "Réserver", moto_path(@moto, anchor: "form"), class:"btn btn-blue w-100 mt-4" %></p>
+          <% end  %>
+
+        </div>
+        <div class="p-3">
+          <div style="width: 100%; height: 300px; margin-top: 8px; "
+            data-controller="mapbox"
+            data-mapbox-marker-value="<%= @marker.to_json %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <% if current_user != @moto.user  %>
   <div class="container text-center mt-4" id="form">
     <h1>Réserver votre 2 roues</h1>
     <div class="container" style="width: 50%">
@@ -42,4 +44,5 @@
       <% end %>
     </div>
   </div>
+  <% end  %>
 </div>
