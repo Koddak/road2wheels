@@ -1,6 +1,9 @@
 <div class="container">
   <h2 class="text-center" style="margin-top: 16px">Toutes nos motos</h2>
   <%= link_to "<Retour", root_path, class: "text-secondary text-decoration-none my-2" %>
+  <br>
+    <%= link_to "Créer une offre", new_moto_path, class: "btn" %>
+  <br>
   <div class="row justify-content-between">
     <%@motos.each do |moto| %>
       <div class="card col-4 mt-5 position-relative" style="width: 24rem; ">
@@ -8,6 +11,7 @@
         <div class="card-body">
           <h5 class="card-title w-100 text-decoration-none"><%= moto.brand %></h5>
           <h3 class="card-text"><%= moto.model %></h3>
+          <h3 class="card-text"><%= moto.address %></h3>
           <h5 class="card-price position-absolute bottom-0 end-0 mx-2 "><%= moto.price.to_i%>€/jour</h5>
 
           <a class="stretched-link" href="/motos/<%= moto.id %>"></a>
@@ -20,6 +24,6 @@
     <%end %>
   </div>
   <br>
-    <%= link_to "Créer une offre", new_moto_path, class: "btn" %>
+    <%= link_to "Créer une offre", new_moto_path, class: "btn btn-blue" %>
   <br>
 </div>

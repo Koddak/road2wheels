@@ -4,6 +4,10 @@ class MotosController < ApplicationController
 
   def index
     @motos = policy_scope(Moto).order(created_at: :desc)
+
+    if params[:query].present?
+      @motos = Moto.search_by_model_and_adress(params[:query])
+    end
   end
 
   def new
@@ -24,6 +28,11 @@ class MotosController < ApplicationController
 
   def show
     authorize @moto
+    @marker = {
+        lat: @moto.latitude,
+        lng: @moto.longitude,
+        image_url: helpers.asset_url("marker.png")
+      }
   end
 
   def edit
@@ -43,13 +52,13 @@ class MotosController < ApplicationController
   def destroy
     authorize @moto
     @moto.destroy
-    redirect_to motos_path
+    redirect_to dashboard_path
   end
 
   private
 
   def moto_params
-    params.require(:moto).permit(:model, :brand, :cylinder, :price, :photo)
+    params.require(:moto).permit(:model, :brand, :cylinder, :price, :photo, :address)
   end
 
   def set_moto

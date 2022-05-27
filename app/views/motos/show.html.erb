@@ -2,7 +2,7 @@
   <%= link_to "<Retour", motos_path, class: "text-secondary text-decoration-none my-2" %>
 
   <div class="card-product">
-      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img mt-2" %>
+      <%= image_tag @moto.photo, alt: @moto.brand, class:"card-img-top card-product-img" %>
 
     <div class="card-product-infos">
       <h2>Marque : <%= @moto.brand%></h2>
@@ -12,14 +12,16 @@
 
 
     <div>
-      <h2>Localisation : <%= @moto.user.address %></h2>
+      <h2>Localisation : <%= @moto.address %></h2>
       <h2>Par : <%= image_tag @moto.user.photo, class: "avatar" %><%= @moto.user.first_name %></h2>
+
+
     </div>
       <% if current_user == @moto.user  %>
-        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn" %></p>
-        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn" %></p>
+        <p><%= link_to "Edit", edit_moto_path(@moto),class: "btn btn-blue" %></p>
+        <p><%= link_to "Delete", moto_path(@moto), method: :delete, data: { confirm: "Are you sure you want to remove #{@moto.brand}"},class: "btn btn-blue" %></p>
       <% else %>
-        <p><%= link_to "Réserver", new_booking_path, class:"btn" %></p>
+        <p><%= link_to "Réserver", new_booking_path, class:"btn btn-blue" %></p>
       <% end  %>
 
 
@@ -28,5 +30,10 @@
   </div>
 
   <div style="height: 500px">
+    <div style="width: 100%; height: 500px; margin-top: 24px; "
+      data-controller="mapbox"
+      data-mapbox-marker-value="<%= @marker.to_json %>"
+      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
