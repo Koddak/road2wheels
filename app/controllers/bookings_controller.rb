@@ -27,7 +27,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "Accepté"
     @booking.save
-    redirect_to dashboard_path
+    redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
   end
 
   def decline
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
     authorize @booking
     @booking.status = "Décliné"
     @booking.save
-    redirect_to dashboard_path
+    redirect_to dashboard_path(anchor: "booking-#{@booking.id}")
   end
 
   private

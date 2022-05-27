@@ -29,19 +29,18 @@
       <ul class="navbar-nav me-auto">
         <%if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "nav-link text-light" %>
+             <%= link_to "Ajouter une offre", new_moto_path, class: "btn btn-outline-light mx-3" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item"-->
-            <%= link_to "Se connecter", new_user_session_path, class: "nav-link text-light" %>
+            <%= link_to "Se connecter", new_user_session_path, class: "btn btn-outline-light" %>
           </li>
         <% end %>
       </ul>
